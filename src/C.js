@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { MyContext } from './App'
+import { MyContext } from './Contextfile'
 
 export default function C() {
         const values = useContext(MyContext)

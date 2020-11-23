@@ -1,26 +1,30 @@
-import React, {createContext, useState} from 'react';
+import React from 'react';
 import B from './B';
 import C from './C';
+import Container from "./Container"
 
-//First Step
-//create Context
-export const MyContext = createContext(null)
-
-
+/* import Button from './Button'; */
 function App() {
-
-    const [x,setX]=useState(0)
-    const [y,setY]= useState(0)
-
   return (
-    //Second Step, wrap your whole application in Context.Provider, through provider you provide value to your application
-    <MyContext.Provider value={{ x,y,setX,setY }} > 
-        <div>
-            <B/>
-            <C/>
-        </div>
-    </MyContext.Provider>
+       <Container>
+            <div>
+                <B/>
+                <C/>
+            </div>
+        </Container>
+        
   );
 }
-
 export default App;
+
+
+{/* <Button children="abcd" />  
+<Button> abcd </Button> */}
+
+
+
+
+
+ {/*           <Button color="red"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"/></Button>
+            <Button color="red">increment  </Button>
+            <Button color="red"><i>hi</i>  </Button> */}
