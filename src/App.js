@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
+import B from './B';
+import C from './C';
+
+//First Step
+//create Context
+export const MyContext = createContext(null)
+
 
 function App() {
+
+    const [x,setX]=useState(0)
+    const [y,setY]= useState(0)
+
   return (
-    <div> <h1>My React App</h1></div>
+    //Second Step, wrap your whole application in Context.Provider, through provider you provide value to your application
+    <MyContext.Provider value={{ x,y,setX,setY }} > 
+        <div>
+            <B/>
+            <C/>
+        </div>
+    </MyContext.Provider>
   );
 }
 
